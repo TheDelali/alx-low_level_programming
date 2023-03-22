@@ -16,10 +16,10 @@ void jack_bauer(void)
 		for (minute = 0; hour < 60; minute++)
 		{
 			buffer[0] = hour / 10 + '0';
-			buffer[1] = hour % 10 +'0';
+			buffer[1] = hour % 10 + '0';
 			buffer[2] = ':';
-			buffer[3] = minute / 10 +'0';
-			buffer[4] = minute % 10 +'0';
+			buffer[3] = minute / 10 + '0';
+			buffer[4] = minute % 10 + '0';
 			buffer[5] = '\n';
 			write(STDOUT_FILENO, buffer, 6);
 		}
