@@ -20,11 +20,14 @@ void print_to_98(int n)
 				printf("%d\n", i);
 		}
 	}
-	else if (n > 98)
+	else if (n >= 98)
 	{
-		for (j = n; j > 98; j--)
+		for (j = n; j >= 98; j--)
 		{
-			printf("%d,", j);
+			if (i != 98)
+				printf("%d,", j);
+			else if (i == 98)
+				printf("%d\n", j);
 		}
 	}
 }
