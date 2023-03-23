@@ -8,14 +8,13 @@
 
 int main(void)
 {
-	int i, n = 50;
-	long long a = 1, b = 2, c;
+	int a = 1, b = 2, c;
 
-	printf("%lld, %lld", a, b);
-	for (i = 3; i <= n; i++)
+	printf("%d, %d, ", a, b);
+	for (int i = 0; i < 48; i++)
 	{
 		c = a + b;
-		printf(", %lld", c);
+		printf("%d, ", c);
 		a = b;
 		b = c;
 	}
