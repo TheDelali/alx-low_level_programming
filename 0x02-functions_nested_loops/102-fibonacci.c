@@ -11,7 +11,7 @@ int main(void)
 	unsigned long a = 0, b = 1, c;
 	int i;
 
-	for (i = 0; i < 48; i++)
+	for (i = 0; i < 50; i++)
 	{
 		c = a + b;
 		printf("%lu", c);
