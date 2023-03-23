@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "main.h"
 
 /**
@@ -16,7 +15,7 @@ void jack_bauer(void)
 	{
 		minute = 0;
 
-		while (minute < 60) 
+		while (minute < 60)
 		{
 			_putchar((hour / 10) + '0');
 			_putchar((hour % 10) + '0');
