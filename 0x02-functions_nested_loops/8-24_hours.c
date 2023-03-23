@@ -9,19 +9,23 @@
 void jack_bauer(void)
 {
 	int hour, minute;
-	char buffer[6];
 
-	for (hour = 0; hour < 24; hour++)
+	hour = 0;
+
+	while (hour < 24)
 	{
-		for (minute = 0; hour < 60; minute++)
+		minute = 0;
+
+		while (minute < 60) 
 		{
-			buffer[0] = hour / 10 + '0';
-			buffer[1] = hour % 10 + '0';
-			buffer[2] = ':';
-			buffer[3] = minute / 10 + '0';
-			buffer[4] = minute % 10 + '0';
-			buffer[5] = '\n';
-			write(STDOUT_FILENO, buffer, 6);
+			_putchar((hour / 10) + '0');
+			_putchar((hour % 10) + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar((minute % 10) + '0');
+			_putchar('\n');
+			minute++;
 		}
+		hour++;
 	}
 }
