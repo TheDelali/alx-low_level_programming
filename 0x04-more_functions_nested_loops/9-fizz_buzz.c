@@ -10,7 +10,7 @@ int main(void)
 	int i;
 	for (i = 1; i <= 100; i++)
 	{
-		printf("%d ", i);
+		printf("%i ", i);
 
 		if (i % 3 == 0)
 			printf("Fizz ");
