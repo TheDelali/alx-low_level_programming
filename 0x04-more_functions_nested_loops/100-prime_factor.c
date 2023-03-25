@@ -9,17 +9,18 @@
 
 int main(void)
 {
-	long n = 612852475143;
-	long i;
+	long n, maxp;
+	long number = 612852475143;
+	double square = sqrt(number);
 
-	for (i = 2; i <= n; i++)
+	for (n = 1; n <= square; n++)
 	{
-		while (n % i == 0)
+		if (number % n == 0)
 		{
-			n = n / i;
+			maxp = number / n;
 		}
 	}
-	printf("%lld\n", i - 1);
+	printf("%ld\n", maxp);
 
 	return (0);
 }
