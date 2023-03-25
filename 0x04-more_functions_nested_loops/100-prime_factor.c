@@ -9,8 +9,8 @@
 
 int main(void)
 {
-	long long n = 612852475143;
-	long long i;
+	long n = 612852475143;
+	long i;
 
 	for (i = 2; i <= n; i++)
 	{
