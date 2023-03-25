@@ -19,7 +19,7 @@ int main(void)
 			n = n / i;
 		}
 	}
-	printf("%lld\n", i-1);
+	printf("%lld\n", i - 1);
 
 	return (0);
 }
