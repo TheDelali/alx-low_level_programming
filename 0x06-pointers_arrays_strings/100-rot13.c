@@ -4,8 +4,8 @@
 
 /**
  * rot13 -encodes a string with rot13
- * @str: the string to be encoded
- * Return: result
+ * @s: the string to be encoded
+ * Return: s
 */
 
 char *rot13(char *s)
