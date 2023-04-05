@@ -8,31 +8,22 @@
  * Return: result
 */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	char *result = malloc(strlen(str) + 1);
 	int i, j;
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; *(s + i); i++)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
+		for (j = 0; j < 52; j++)
 		{
-			j = str[i] - 'A';
-			j = (j + 13) % 26;
-			result[i] = j + 'A';
-		}
-		else if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			j = str[i] - 'a';
-			j = (j + 13) % 26;
-			result[i] = j + 'a';
-		}
-		else
-		{
-			result[i] = str[i];
+			if (a[j] == *(s + i))
+			{
+				*(s + i) = b[j];
+				break;
+			}
 		}
 	}
-
-	result[i] = '\0';
-	return (result);
+	return (s);
 }
