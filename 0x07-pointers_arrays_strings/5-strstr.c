@@ -1,6 +1,4 @@
 #include "main.h"
-#include <string.h>
-#include <stddef.h>
 
 /**
  * _strstr -locates a substring
@@ -12,31 +10,24 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int needle_len = strlen(needle);
-	int haystack_len = strlen(haystack);
+	unsigned int i = 0, j = 0;
 
-	if (needle_len > haystack_len)
+	while (haystack[i])
 	{
-		return (NULL);
-	}
-
-	int i;
-
-	for (i = 0; i <= haystack_len - needle_len; i++)
-	{
-		int j;
-
-		for (j = 0; j < needle_len; j++)
+		while (needle[j] && (haystack[i] == needle[0]))
 		{
-			if (haystack[i + j] != needle[j])
-			{
+			if (haystack[i + j] == needle[j])
+				j++;
+			else
 				break;
-			}
 		}
-		if (j == needle_len)
+		if (needle[j])
 		{
-			return (&haystack[i]);
+			i++;
+			j = 0;
 		}
+		else
+			return (haystack + i);
 	}
-	return (NULL);
+	return (0);
 }
