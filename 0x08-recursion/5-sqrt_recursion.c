@@ -19,7 +19,7 @@ int check(int n, int start, int end)
 	}
 	mid = (start + end) / 2;
 	square = mid * mid;
-	
+
 	if (square == n)
 	{
 		return (mid);
