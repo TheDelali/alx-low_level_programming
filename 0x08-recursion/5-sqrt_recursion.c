@@ -14,7 +14,8 @@ int check(int n, int start, int end)
 	{
 		return (-1);
 	}
-	int mid, square;
+	int mid;
+	int square;
 
 	mid = (start + end) / 2;
 	square = mid * mid;
