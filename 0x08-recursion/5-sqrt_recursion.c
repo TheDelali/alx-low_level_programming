@@ -2,37 +2,18 @@
 
 /**
  * check -check for square root
- * @n: number to check
- * @start: int
- * @end: int
+ * @x: an int
+ * @y: an int
  *
  * Return: int or -1
  */
-int check(int n, int start, int end)
+int check(int x, int y)
 {
-	int mid;
-	int square;
-
-	if (start > end)
-	{
+	if (x * x == y)
+		return (x);
+	if (x * x > y)
 		return (-1);
-	}
-	mid = (start + end) / 2;
-	square = mid * mid;
-
-	if (square == n)
-	{
-		return (mid);
-	}
-	else if (square < n)
-	{
-		return (check(n, mid + 1, end));
-	}
-	else
-	{
-		return (check(n, start, mid - 1));
-	}
-}
+	return (check(x + 1, y));
 
 /**
  * _sqrt_recursion -compute natural square root of a number
@@ -42,12 +23,7 @@ int check(int n, int start, int end)
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		return (check(n, 0, n));
-	}
+	if (n == 0)
+		return (0);
+	return (check(1, n));
 }
