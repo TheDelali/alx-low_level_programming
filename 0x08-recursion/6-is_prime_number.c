@@ -10,7 +10,7 @@
 
 int check(int x, int y)
 {
-	if (x < 2 || y % x == 0)
+	if (y < 2 || y % x == 0)
 		return (0);
 	else if (x > y / 2)
 		return (1);
