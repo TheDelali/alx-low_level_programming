@@ -22,7 +22,7 @@ int check(int n, int start, int end)
 	
 	if (square == n)
 	{
-		return mid;
+		return (mid);
 	}
 	else if (square < n)
 	{
