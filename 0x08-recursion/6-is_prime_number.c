@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 
 /**
  * check -to see if number is prime
@@ -11,14 +10,12 @@
 
 int check(int n, int divisor)
 {
-	if (n < 2)
+	if (n < 2 || n % divisor == 0)
 		return (0);
-	if (divisor > sqrt(n))
+	else if (n > divisor / 2)
 		return (1);
-	if (n % divisor == 0)
-		return (0);
-
-	return (check(n, divisor + 1));
+	else
+		return (check(n + 1, divisor));
 }
 
 /**
@@ -30,5 +27,7 @@ int check(int n, int divisor)
 
 int is_prime_number(int n)
 {
-	return (check(n, 2));
+	if (n == 2)
+		return (1);
+	return (check(2, n));
 }
