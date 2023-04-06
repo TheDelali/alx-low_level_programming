@@ -14,6 +14,7 @@ int check(int x, int y)
 	if (x * x > y)
 		return (-1);
 	return (check(x + 1, y));
+}
 
 /**
  * _sqrt_recursion -compute natural square root of a number
