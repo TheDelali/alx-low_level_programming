@@ -11,12 +11,12 @@
 int check(int n, int start, int end)
 {
 	int mid;
+	int square;
+
 	if (start > end)
 	{
 		return (-1);
 	}
-	int square;
-
 	mid = (start + end) / 2;
 	square = mid * mid;
 	
