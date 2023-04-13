@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 {
 	size_t len1 = strlen(s1);
 	size_t len2 = strlen(s2);
-	char *result;
+	char *result, *p;
 
 	if (s1 == NULL)
 	{
@@ -29,8 +29,18 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	strcpy(result, s1);
-	strcpy(result, s2);
+	*p = result;
+	while (*s1 != '\0')
+	{
+		*p++ = *s1++;
+	}
 
+	while (*s2 != '\0')
+	{
+		*p++ = *s2++;
+	}
+
+	*p = '\0';
+	
 	return (result);
 }
