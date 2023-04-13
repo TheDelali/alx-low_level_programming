@@ -6,6 +6,8 @@
  * str_concat -concatenates two strings
  * @s1: first string
  * @s2: second string
+ *
+ * Return: NULL or the two strings
  */
 
 char *str_concat(char *s1, char *s2)
@@ -29,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	*p = result;
+	p = result;
 	while (*s1 != '\0')
 	{
 		*p++ = *s1++;
