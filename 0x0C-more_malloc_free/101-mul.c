@@ -18,9 +18,9 @@ int main(int argc, char **argv)
 	char *num1 = argv[1];
 	char *num2 = argv[2];
 	int len1 = strlen(num1);
-	int len2 =strlen(num2);
+	int len2 = strlen(num2);
 	int i, result;
-	
+
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -65,7 +65,7 @@ int mul(char *num1, char *num2)
 	int i, j;
 	int i_n1 = 0;
 	int i_n2 = 0;
-	int *result = (int*)calloc(len1 + len2, sizeof(int));
+	int *result = (int *)calloc(len1 + len2, sizeof(int));
 	int result_len;
 	int finalresult;
 
@@ -73,14 +73,17 @@ int mul(char *num1, char *num2)
 	{
 		int carry = 0;
 		int n1 = num1[i] - '0';
+
 		i_n2 = 0;
 
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			int n2 = num2[j] - '0';
 			int sum = n1 * n2 + result[i_n1 + i_n2] + carry;
+
 			carry = sum / 10;
 			result[i_n1 + i_n2] = sum % 10;
+
 			i_n2++;
 		}
 
