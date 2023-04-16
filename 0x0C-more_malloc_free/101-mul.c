@@ -72,7 +72,7 @@ int mul(char *num1, char *num2)
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		int carry = 0;
-		int n1 = num[i] - '0';
+		int n1 = num1[i] - '0';
 		i_n2 = 0;
 
 		for (j = len2 - 1; j >= 0; j--)
