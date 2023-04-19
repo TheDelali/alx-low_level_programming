@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		totallen += strlen(av[i]) + 1;
 
-	result = (char *) malloc(sizeof(char) * totallen);
+	*result = (char *) malloc(sizeof(char) * totallen);
 
 	if (result == NULL)
 		return (NULL);
