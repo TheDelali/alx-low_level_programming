@@ -15,7 +15,7 @@ char *argstostr(int ac, char **av)
 	int totallen = 0;
 	int i;
 	char *result;
-	int pos = 0;
+	char *pos;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -23,17 +23,21 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		totallen += strlen(av[i]) + 1;
 
-	result = (char *) malloc(sizeof(char) * totallen);
+	result = (char *) malloc(sizeof(char) * totallen + 1);
 
 	if (result == NULL)
 		return (NULL);
 
+	pos = result;
 	for (i = 0; i < ac; i++)
 	{
-		strcpy(result + pos, av[i]);
-		pos += strlen(av[i]);
-		result[pos++] = '\n';
+		int len = strlen(av[i]);
+
+		memcpy(pos, av[i], len);
+		pos += len;
+		*pos++ = '\n';
 	}
 
+	*pos = '\0';
 	return (result);
 }
