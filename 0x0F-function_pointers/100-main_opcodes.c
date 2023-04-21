@@ -6,29 +6,37 @@
  * @argc: argument counter
  * @argv: argument vector
  *
- * Return: 1, 2 or 0
+ * Return: 0
  */
 int main(int argc, char* argv[])
 {
-	int num_bytes = atoi(argv[1]);
-	unsigned char* ptr = (unsigned char*)main;
-	int i;
+	int byte, i;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
+	byte = atoi(argv[1]);
 
-	if (num_bytes < 0)
+	if (byte < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	for (i = 0; i < num_bytes; i++)
+	for (i = 0; i < byte; i++)
 	{
-		printf("%02x", *(ptr + i));
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (i == byte - 1)
+			continue;
+		printf(" ");
+
+		address++;
 	}
 	printf("\n");
 
