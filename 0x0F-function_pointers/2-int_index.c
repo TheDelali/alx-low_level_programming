@@ -7,7 +7,7 @@
  * @cmp: pointer to function to compare the values
  *
  * Return: if no element matches -1 otherwise
- *  returns the index of the first element for 
+ *  returns the index of the first element for
  *  which the cmp function does not return 0
  */
 
@@ -20,7 +20,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	for (i = 0; i < size; i++)
 	{
-		if(cmp(array[i]) != 0)
+		if (cmp(array[i]) != 0)
 			return (i);
 	}
 	return (-1);
