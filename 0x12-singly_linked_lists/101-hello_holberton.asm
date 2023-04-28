@@ -1,13 +1,36 @@
 section .data
-	msg db "Hello, Holberton", 0Ah ; msg to print with newline char
-
+    ; Define a null-terminated string "Hello, Holberton" followed by a line feed
+    str: db "Hello, Holberton", 0xa
+    
+    ; Calculate the length of the string
+    len equ $ - str
+	
 section .text
-	global main
 
-	extern printf ; declare printf function
+; Define the entry point of the program
+global main
 
 main:
-	mov rdi, msg ; move msg address to first arg register
-	xor eax, eax ; clear eax register for success
-	call printf ; call printf function
-	ret ; return from main
+  ; Load the system call number for write into RAX
+  MOV RAX, 1
+
+  ; Load the file descriptor for standard output into RDI
+  MOV RDI, 1
+
+  ; Load the address of the message into RSI
+  MOV RSI, str
+
+  ; Load the length of the message into RDX
+  MOV RDX, len
+
+  ; Make the system call using the syscall instruction
+  syscall
+
+  ; Load the system call number for exit into RAX
+  MOV RAX, 60
+
+  ; Load the exit status into RDI
+  MOV RDI, 0
+
+  ; Make the system call using the syscall instruction
+  syscall
